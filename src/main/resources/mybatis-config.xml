@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+	   <!-- 在mapper文件中，可以使用类的别名进行编写，这样可以减少配置代码 -->
+	   <!-- <typeAlias alias="User" type="pers.example.model.User" /> -->
+		<package name="pers.example.model"/>
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="pers/example/mapper/UserMapper.xml" />
+	</mappers>
+	
+</configuration>  
