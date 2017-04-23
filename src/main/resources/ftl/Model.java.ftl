@@ -1,7 +1,5 @@
 package ${model.packageName}.model;
 
-import java.sql.Timestamp;
-
 public class ${model.className} {
 	
 <#list model.attrs as attr>

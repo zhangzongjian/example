@@ -14,6 +14,8 @@ public class JavaTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		String[] ids = "12,2，3".split(",|，");
+		System.out.println(Arrays.asList(ids));
 	}
 
 	

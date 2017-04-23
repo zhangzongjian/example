@@ -1,10 +1,15 @@
 package ${model.packageName}.service;
+import java.util.List;
+
+import ${model.packageName}.util.Attribute;
 import ${model.packageName}.util.Pager;
 import ${model.packageName}.model.${model.className};
 
 public interface ${model.className}Service {
 
-	${model.className} searchById(${model.primaryDef});
+	${model.className} searchByPrimaryKey(${model.primaryDef});
+	
+	List<${model.className}> searchByAttributes(List<Attribute> attributes);
 	
 	Pager search(Pager pager);
 	
@@ -14,4 +19,5 @@ public interface ${model.className}Service {
 	
 	int delete(${model.primaryDef});
 	
+	List<${model.className}> searchByKeywords(List<String> list);
 }

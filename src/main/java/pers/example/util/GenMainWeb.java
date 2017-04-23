@@ -51,22 +51,23 @@ public class GenMainWeb {
         //复制模板到代码目录
         //FileUtils.copyDirectoryToDirectory(source, destination);
     	
-    	generateJava(className,packageName,"Controller",attrs);
-    	generateJavaClass(className,packageName,attrs);
-    	generateJava(className,packageName,"Mapper",attrs);
-    	generateMapperXml(className,packageName,attrs);
-    	generateJava(className,packageName,"Service",attrs);
-        generateJava(className,packageName,"ServiceImpl",attrs);
-        System.out.println("Java代码已生成，位置:"+codePath + "src/");
-//        generateJsp(className,packageName,"index.jsp",attrs);
-//        generateJsp(className,packageName,"add.jsp",attrs);
-//        generateJsp(className,packageName,"update.jsp",attrs);
+//    	generateJava(className,packageName,"Controller",attrs);
+//    	generateJavaClass(className,packageName,attrs);
+//    	generateJava(className,packageName,"Mapper",attrs);
+//    	generateMapperXml(className,packageName,attrs);
+//    	generateJava(className,packageName,"Service",attrs);
+//        generateJava(className,packageName,"ServiceImpl",attrs);
+//        System.out.println("Java代码已生成，位置:"+codePath + "src/");
+        generateJsp(className,packageName,"index.jsp",attrs);
+        generateJsp(className,packageName,"add.jsp",attrs);
+        generateJsp(className,packageName,"update.jsp",attrs);
+        generateJsp(className,packageName,"detail.jsp",attrs);
 //        generateJsp(className,packageName,"result.jsp",attrs);
 //        generateJsp(className,packageName,"welcome.jsp",attrs);
 //        System.out.println("Jsp代码已生成，位置:"+codePath + "WebContent/");
 //        generateConfigXml(className,packageName,"struts.xml");
 //        generateConfigXml(className,packageName,"app-bean.xml");
-        generateConfigXml(className,packageName,"mybatis-config.xml");
+//        generateConfigXml(className,packageName,"mybatis-config.xml");
         generateSql(className,packageName,attrs);
     }
     

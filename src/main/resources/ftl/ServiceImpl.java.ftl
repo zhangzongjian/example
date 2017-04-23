@@ -4,6 +4,8 @@ import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import ${model.packageName}.util.Attribute;
 import ${model.packageName}.util.Pager;
 import ${model.packageName}.model.${model.className};
 import ${model.packageName}.mapper.${model.className}Mapper;
@@ -15,7 +17,7 @@ public class ${model.className}ServiceImpl implements ${model.className}Service 
 	@Resource
 	private ${model.className}Mapper ${model.className?uncap_first}Mapper;
 	
-	public ${model.className} searchById(${model.primaryDef}){
+	public ${model.className} searchByPrimaryKey(${model.primaryDef}){
 		return ${model.className?uncap_first}Mapper.selectByPrimaryKey(${model.primaryParamIn});
 	}
 	
@@ -39,8 +41,27 @@ public class ${model.className}ServiceImpl implements ${model.className}Service 
 		  pager = new Pager();
 		}
 		List<${model.className}> items = ${model.className?uncap_first}Mapper.search(pager);
+		long total = ${model.className?uncap_first}Mapper.getTotal();
+		pager.setTotal(total);
 		pager.setDatas(items);	  
 		return pager;
 	}
 
+	/**
+	 * 模糊查询
+	 * @param attributes
+	 * @return
+	 */
+	public List<${model.className}> searchByKeywords(List<String> keywords) {
+		return ${model.className?uncap_first}Mapper.searchByKeywords(keywords);
+	}
+
+	/**
+	 * 按属性查询
+	 * @param attributes
+	 * @return
+	 */
+	public List<${model.className}> searchByAttributes(List<Attribute> attributes) {
+		return ${model.className?uncap_first}Mapper.searchByAttributes(attributes);
+	}
 }
